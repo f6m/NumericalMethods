@@ -34,10 +34,6 @@ while(n<N and linalg.norm(x1-x0) > e and linalg.norm(matmul(A,x1)-matmul(A,x0)) 
 #Comprobacion:
 
 print(matmul(A,x1))
-print(b)	
-#plot 3D
-from mpl_toolkits import mplot3d
-import matplotlib.pyplot as plt
+print(b)
 
-fig = plt.figure()
-ax = plt.axes(projection='3d')
+#plot 3D
