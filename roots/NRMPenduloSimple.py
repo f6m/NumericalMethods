@@ -8,7 +8,7 @@ f3=y2-2*y3+y4+0.111*sin(y3)
 f4=y3-2*y4+y5+0.111*sin(y4)
 f5=y4-2*y5+1+0.111*sin(y5)
 
-from numpy import cos, sin
+from numpy import *
 
 
 i=0 #Contador de iteraciones
