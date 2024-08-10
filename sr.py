@@ -5,6 +5,14 @@
 from __future__ import division
 from numpy import *
 
+def round_to_places(val, digits):
+    if digits < 0:
+        raise ValueError
+    if digits == 0:
+        return int(val)
+    factor = 10 ** digits
+    return int(val * factor) / factor
+
 def contar_digitos(n):
     # Caso base
     if n == 0:
@@ -14,10 +22,11 @@ def contar_digitos(n):
     # Iteraciones
     while n != 0:
         # Borra el digito mas a la derecha
-        n = n /10
+        print("n",n)	
+        n = int(n/10)
         # Incrementa el contador
         c += 1
-
+    print("c",c)
     return c
 
 def x1(x):
@@ -28,6 +37,7 @@ def x1(x):
 
 def n1(x,r,t):
    i=0
+   xc=x
    if t >= 0:
    	j=1
 	while(j*(2*x+j)<=r-x*x):j=j+1
@@ -36,16 +46,18 @@ def n1(x,r,t):
 	for m in range(1,13,1):
 	        j=1
                 print("m",m)
-	    	while((j/(10**m))*(2*x+(j/(10**m)))<=r-x*x and j<=9):
+	    	while((j/(10**m))*(2*xc+(j/(10**m)))<=r-xc*xc and j<=9):
 		        print("j",j)	
 			j=j+1
-	        i = i+(j-1)/(10**m)
+	        i = round_to_places(i+((j-1)/(10**m)),12)
 		print("i",i)
-		x=x+i
+		xc=round_to_places(x+i,12) #El error en el x y su actualizacion, correccion xc
+                print("x",xc)
    	return i
 
 def r2(r):
    k = contar_digitos(r)
+   print("k",k)
    if k % 2 != 0: 
  	x = r / 10**(k-1) #primer grupo mas a la izquierda
 	b = 1 #tamano del bloque
@@ -65,6 +77,7 @@ def r2(r):
  	while(d>=0):
 		xn = xn+n
 	        n = n1(xn,r,d) #k-b numero de digitos que quedan.
+		print("d",d)
 		print("La aproximacion 1 de raiz es:",xn+n)
 		d=d-2
         xn = xn+n
@@ -74,6 +87,7 @@ def r2(r):
 	n = n1(xn,r,d) #k-b numero de digitos que quedan.
 	print("n",n)
 	print("La aproximacion 2 de raiz es:",xn+n)
+   return xn+n
          
 print(r2(9016))
 
