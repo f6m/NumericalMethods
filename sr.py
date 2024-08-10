@@ -1,6 +1,8 @@
 # Algoritmo para determinar la raiz cuadrada de un numero real
+# La funcion para redondeo de digitos decimales es opcional
+# by f6m
 # Compilacion y ejecucion:
-# python sr.py 
+# python sr.py
 
 from __future__ import division
 from numpy import *
