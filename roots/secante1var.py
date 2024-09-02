@@ -11,7 +11,7 @@ d=0.001
 
 #funcion a encontrar el cero f(x)=0
 def func(x): 
-  return ((40 + 1.1474/(x*x))*(x - 0.03985)) - 0.08314*200
+  return (40+(147200/(x*x)))*(x-0.00003985)-16680
 
 #puntos iniciales
 x1=0.2 #inicial 1
@@ -31,13 +31,13 @@ T=[1,2]
 t=3
 
 while t <= n and np.abs(x3-x2) >= e and np.abs(func(x3)-func(x2)) >= d:
-	print(t,x3)
-    	t=t+1
-	T.append(t)
-	x1=x2
-	x2=x3
-	x3=x1-(func(x1)*(x2-x1)/(func(x2)-func(x1)))
-	x.append(x3)
+  print(t,x3)
+  t=t+1
+  T.append(t)
+  x1=x2
+  x2=x3
+  x3=x1-(func(x1)*(x2-x1)/(func(x2)-func(x1)))
+  x.append(x3)
 
 T.append(t+1)
 
@@ -48,4 +48,3 @@ plt.plot(T,x)
 plt.xlabel('Iteraciones')
 plt.ylabel('Metodo de la secante')
 plt.show()
-
