@@ -11,12 +11,11 @@ e=0.0001
 d=0.0001
 
 #funcion a encontrar el punto fijo f(x)=x
-def func(x): 
-  return 4+0.0333*sin(2*x)
-#return ((40 + 1.1474/(x*x))*(x - 0.03985)) - 0.08314*200
+def func(x): return 0.00003985+16628/(40+(147200/(x*x)))
+  #return 4+0.0333*sin(2*x)
 
 #punto inicial
-x0=-1000 #inicial 1
+x0=100.5 #inicial 1
 #x2=0.8 #inicial 2
 
 #vector para guardar la sucecion de puntos obtenidos en una lista
@@ -41,7 +40,6 @@ while t <= n and np.abs(x1-x0) >= e and np.abs(func(x1)-func(x0)) >= d:
 
 #T.append(t+1)
 print(T,x)
-
 
 plt.plot(T,x, marker="o")
 plt.xlabel('Iteraciones')
