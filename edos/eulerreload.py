@@ -10,7 +10,8 @@ x=1
 X=[x]
 
 print(t,x)
-xthm=x+x1(t,x+h*x1(t,x))*(h/2)+x1(t,x)*(h/2) #Euler Mejorado
+#En esta formula solo se aproximo x(t+h) pero t+h no
+xthm=x+(x1(t+h,x+h*x1(t,x))+x1(t,x))*(h/2) #Euler Mejorado
 
 while(t <= 2):
     x=xthm
@@ -18,7 +19,7 @@ while(t <= 2):
     t=t+h
     T.append(t)
     print(t,x)
-    xthm=x+x1(t,x+h*x1(t,x))*(h/2)+x1(t,x)*(h/2) #Euler Mejorado
+    xthm=x+(x1(t+h,x+h*x1(t,x))+x1(t,x))*(h/2) #Euler Mejorado
 
 import matplotlib.pyplot as plt
 
