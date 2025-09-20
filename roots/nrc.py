@@ -34,7 +34,7 @@ z.append(z1)
 #tiempo
 T=[0,1]
 t=2
-while t <= n and np.abs(z1-z0) >= e and np.abs(nr(z1)-nr(z0)) >= d:
+while t <= n and np.abs(z1-z0) >= e and np.abs(f(z1)-f(z0)) >= d:
     T.append(t)
     t=t+1
     z0=z1
